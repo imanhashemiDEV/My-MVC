@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0b6e9f17-7e1d-4437-b26b-5d0d0bbc282a" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\laragon\bin\php\php-8.1.10-Win32-vs16-x64\php.exe" />
+  <component name="ProjectId" id="2P6WmZxhCu8PqkVVHVwFBjXoJ8p" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.laravel-idea.search-composer-json": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Project/LaravelProjects/My MVC",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\LaravelProjects\My MVC Codes\App\Model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\LaravelProjects\My MVC\resources\views" />
+      <recent name="D:\Project\LaravelProjects\My MVC\app\Http" />
+      <recent name="D:\Project\LaravelProjects\My MVC Codes\App\Controller" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0b6e9f17-7e1d-4437-b26b-5d0d0bbc282a" name="Changes" comment="" />
+      <created>1682778171850</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682778171850</updated>
+      <workItem from="1682778172819" duration="12000" />
+      <workItem from="1682778306593" duration="889000" />
+      <workItem from="1682779392406" duration="5334000" />
+      <workItem from="1682963424920" duration="284000" />
+      <workItem from="1682965049351" duration="3113000" />
+      <workItem from="1683036917033" duration="6000" />
+      <workItem from="1683044263910" duration="604000" />
+      <workItem from="1683046617155" duration="2145000" />
+      <workItem from="1683050389663" duration="26000" />
+      <workItem from="1683051489875" duration="8000" />
+      <workItem from="1683135205465" duration="1076000" />
+      <workItem from="1683185902363" duration="2129000" />
+      <workItem from="1683223489411" duration="4371000" />
+      <workItem from="1683394576038" duration="5046000" />
+      <workItem from="1683575455847" duration="2901000" />
+      <workItem from="1683646433827" duration="4335000" />
+      <workItem from="1683733714845" duration="5889000" />
+      <workItem from="1683824967177" duration="539000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
