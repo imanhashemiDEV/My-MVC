@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 define("APP_NAME",'MY MVC');
