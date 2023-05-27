@@ -63,11 +63,6 @@ class Router
                             }
                         }
 
-                        $path = BASE_DIR . "/app/Http/Controllers/".$reservedRoute['controller'].".php";
-                        if(!file_exists($path)){
-                            echo $path;
-                        }
-
                         $controller = "\App\Http\Controllers\\".$reservedRoute['controller'];
 
                         $object = new $controller();
@@ -90,7 +85,7 @@ class Router
         }
 
         if(!$this->result){
-            echo 'no route found';
+            echo 'controller not found';
         }
 
 
