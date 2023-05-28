@@ -27,12 +27,15 @@ class Router
         $method_filed = strtolower($_SERVER['REQUEST_METHOD']);
 
         if ($method_filed == 'post') {
-            if ($_POST['method'] == 'put') {
-                $method_filed = 'put';
+            if(isset($_POST['method'])){
+                if ($_POST['method'] == 'put') {
+                    $method_filed = 'put';
+                }
+                if ($_POST['method'] == 'delete') {
+                    $method_filed = 'delete';
+                }
             }
-            if ($_POST['method'] == 'delete') {
-                $method_filed = 'delete';
-            }
+
         }
 
         return $method_filed;
