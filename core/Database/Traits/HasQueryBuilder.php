@@ -48,13 +48,13 @@ trait HasQueryBuilder
         $this->orderBy=[];
     }
 
-    protected function setLimit($from , $number){
-        $this->limit['from'] = (int) $from;
+    protected function setLimit($offset , $number){
+        $this->limit['offset'] = (int) $offset;
         $this->limit['number'] = (int) $number;
     }
 
      protected function resetLimit(){
-         unset($this->limit['from']);
+         unset($this->limit['offset']);
          unset($this->limit['number']);
      }
 
@@ -75,6 +75,52 @@ trait HasQueryBuilder
         $this->resetValues();
         $this->resetLimit();
         $this->resetOrderBy();
+     }
+
+     protected function executeQuery(){
+        $query="";
+        $query .= $this->sql;
+
+        if(!empty($this->where)){
+
+            // WHERE id=10 AND cat_id=12
+            // WHERE id=10
+            $whereQuery = "";
+            foreach($this->where as $where){
+                $whereQuery == "" ? $whereQuery .= $where['condition'] : $whereQuery .=' '. $where['operator']." ".$where['condition'];
+            }
+
+            $query .= " WHERE ". $whereQuery;
+
+        }
+
+        // ORDER BY id , DESC
+        if(!empty($this->orderBy)){
+            $query .= ' ORDER BY '. implode(', ',$this->orderBy);
+        }
+
+        // LIMIT 10 OFFSET 4
+        if(!empty($this->limit)){
+            $query .= ' LIMIT '.$this->limit['number'].' OFFSET '.$this->limit['offset'];
+        }
+
+        $query .=" ;";
+
+        $pdoInstance = DBConnection::getDBConnectionInstance();
+         $statement = $pdoInstance->prepare($query);
+
+         // WHERE id>10 AND id=20 AND cat_id =2
+        // $this->values = [id=>20 , cat_id=>2]
+        // $this->bindingValues = [ 0=>11 ,1=>20, 2=>2 ]
+
+         if(sizeof($this->bindingValues ) > sizeof($this->values)){
+             sizeof($this->bindingValues) > 0 ? $statement->execute($this->bindingValues): $statement->execute();
+         }else{
+             sizeof($this->values) > 0 ? $statement->execute($this->values): $statement->execute();
+         }
+
+         return $statement;
+
      }
 
 
