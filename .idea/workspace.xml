@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0b6e9f17-7e1d-4437-b26b-5d0d0bbc282a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Database/Traits/HasQueryBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database/Traits/HasQueryBuilder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +99,9 @@
       <workItem from="1685425791003" duration="1877000" />
       <workItem from="1685432168511" duration="1309000" />
       <workItem from="1685438106922" duration="11000" />
-      <workItem from="1685614632496" duration="3310000" />
+      <workItem from="1685614632496" duration="3441000" />
+      <workItem from="1685640549316" duration="51000" />
+      <workItem from="1685691263193" duration="973000" />
     </task>
     <servers />
   </component>
