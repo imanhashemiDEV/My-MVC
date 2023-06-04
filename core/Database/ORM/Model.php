@@ -2,11 +2,12 @@
 
 namespace Core\Database\ORM;
 
+use Core\Database\Traits\HasAttributes;
 use Core\Database\Traits\HasQueryBuilder;
 
 abstract class Model
 {
-  use HasQueryBuilder;
+  use HasQueryBuilder, HasAttributes;
 
     protected $table;
     protected $fillable = [];
