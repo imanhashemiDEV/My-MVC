@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0b6e9f17-7e1d-4437-b26b-5d0d0bbc282a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/Database/DBConnection/DBConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database/DBConnection/DBConnection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Database/Traits/HasCRUD.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Database/Traits/HasCRUD.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +106,8 @@
       <workItem from="1685865520433" duration="1730000" />
       <workItem from="1686072090616" duration="1366000" />
       <workItem from="1686237808537" duration="3481000" />
-      <workItem from="1686401008058" duration="3309000" />
+      <workItem from="1686401008058" duration="3362000" />
+      <workItem from="1686811605715" duration="665000" />
     </task>
     <servers />
   </component>
