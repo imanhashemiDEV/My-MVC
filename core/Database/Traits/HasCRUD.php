@@ -85,5 +85,28 @@ trait HasCRUD{
         return $object->executeQuery();
     }
 
+    protected function where($attribute, $operation , $value){
+
+        // ->where('viewed' , '>=' , 1000)
+        $condition = $attribute .' '.$operation .' ?';
+        $this->setValue($attribute, $value);
+
+        $operator = " AND ";
+
+        $this->setWhere($operator, $condition);
+        return $this;
+
+    }
+
+    protected function orderBy($attribute,$expression){
+        $this->setOrderBy($attribute, $expression);
+        return $this;
+    }
+
+    protected function limit($offset , $number){
+        $this->setLimit($offset , $number);
+        return $this;
+    }
+
 
 }
