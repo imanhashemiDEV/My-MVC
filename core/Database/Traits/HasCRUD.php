@@ -20,8 +20,8 @@ trait HasCRUD{
         return implode(', ' ,$fillables);
     }
 
-    protected function insert(){
-        $this->setSql("INSERT INTO {$this->table} SET ". $this->setFillables() . $this->createdAt."=Now();");
+    public function insert(){
+        $this->setSql("INSERT INTO {$this->table} SET ". $this->setFillabels() . $this->createdAt."=Now();");
         $this->executeQuery();
         $this->resetQuery();
         // name age default
@@ -38,7 +38,7 @@ trait HasCRUD{
 
     }
 
-    protected function update(){
+    public function update(){
         $this->setSql("INSERT INTO {$this->table} SET ". $this->setFillables() . $this->updatedAt."=Now();");
         $this->setWhere("AND " , $this->primaryKey." = ?");
         $this->setValue($this->primaryKey, $this->{$this->primaryKey});
@@ -47,7 +47,7 @@ trait HasCRUD{
         return $this;
     }
 
-    protected function find($id){
+    public function find($id){
         $this->setSql("SELECT * FROM ".$this->table);
         $this->setWhere("AND" , $this->primaryKey . " = ? ");
         $this->setValue($this->primaryKey, $id);
@@ -60,8 +60,8 @@ trait HasCRUD{
         }
     }
 
-    protected function get(){
-        $this->setSql(" SELECT * FROM " .$this->table);
+    public function get(){
+        $this->setSql(" SELECT * FROM " . $this->table);
         $statement = $this->executeQuery();
         $data = $statement->fetchAll();
         if($data){
@@ -72,20 +72,20 @@ trait HasCRUD{
         }
     }
 
-    protected function delete($id){
+    public function delete($id){
         $object = $this;
         $this->resetQuery();
         if($id){
             $object = $this->find($id);
             $this->resetQuery();
         }
-        $object->setSql("DELETE FROM ".$this->table);
-        $object->setWhere("AND" , $this->primaryKey . " = ? ");
-        $this->setValue($this->primaryKey, $object->{$object->primaryKey});
+        $object->setSql("DELETE FROM ".$object->table);
+        $object->setWhere("AND" , $object->primaryKey . " = ? ");
+        $object->setValue($this->primaryKey, $id);
         return $object->executeQuery();
     }
 
-    protected function where($attribute, $operation , $value){
+    public function where($attribute, $operation , $value){
 
         // ->where('viewed' , '>=' , 1000)
         $condition = $attribute .' '.$operation .' ?';
@@ -98,12 +98,12 @@ trait HasCRUD{
 
     }
 
-    protected function orderBy($attribute,$expression){
+    public function orderBy($attribute,$expression){
         $this->setOrderBy($attribute, $expression);
         return $this;
     }
 
-    protected function limit($offset , $number){
+    public function limit($offset , $number){
         $this->setLimit($offset , $number);
         return $this;
     }

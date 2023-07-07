@@ -6,40 +6,42 @@ use PDO;
 USE PDOException;
 class DBConnection
 {
+
     private static $dbConnectionInstance = null;
 
-    private function __construct()
-    {
+    private function __construct(){
+
     }
 
-    public static function getDBConnectionInstance()
-    {
-        if (self::$dbConnectionInstance == null) {
+    public static function getDBConnectionInstance(){
+
+        if(self::$dbConnectionInstance == null){
             $DBConnectionInstance = new DBConnection();
             self::$dbConnectionInstance = $DBConnectionInstance->dbConnection();
         }
 
         return self::$dbConnectionInstance;
+
     }
 
-    public function dbConnection()
-    {
-        $servername = DBHOST;
-        $databse = DBNAME;
-        $username = DBUSERNAME;
-        $password = DBPASSWORD;
-        try {
-            $conn = new PDO("mysql:host=$servername;dbname=$databse", $username, $password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $conn;
-        } catch (PDOException $e) {
-            echo $e->getMessage();
+    private function dbConnection(){
+
+        $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
+        try{
+            return new PDO("mysql:host=" . DBHOST . ";dbname=" . DBNAME, DBUSERNAME, DBPASSWORD, $options);
+        }
+        catch (PDOException $e){
+            echo "error in database connection: " . $e->getMessage();
             return false;
         }
+
     }
 
-    public static function newInsertedId()
-    {
+
+    public static function newInsertId(){
+
         return self::getDBConnectionInstance()->lastInsertId();
+
     }
+
 }

@@ -2,6 +2,6 @@
 
 
 define('DBHOST', 'localhost');
-define('DBNAME', 'my_mvc');
+define('DBNAME', 'dsoon');
 define('DBUSERNAME', 'root');
 define('DBPASSWORD', '');
