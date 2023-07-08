@@ -8,25 +8,20 @@ use Core\Database\DBConnection\DBConnection;
 
 trait HasCRUD{
 
-    protected function setFillabels(){
+    protected function setFillabels($array){
         $fillables = [];
         foreach($this->fillable as $attribute){
-            if(isset($this->$attribute)){
                 array_push($fillables, $attribute." = ?");
-                $this->setValue($attribute, $this->$attribute);
-            }
+                $this->setValue($attribute, $array[$attribute]);
         }
-
         return implode(', ' ,$fillables);
     }
 
-    public function insert(){
-        $this->setSql("INSERT INTO {$this->table} SET ". $this->setFillabels() . $this->createdAt."=Now();");
+    public function insert($array){
+        $this->setSql("INSERT INTO {$this->table} SET ". $this->setFillabels($array)."," . $this->createdAt."=Now();");
         $this->executeQuery();
         $this->resetQuery();
-        // name age default
-        // is_admin status
-        $object = $this->find(DBConnection::newInsertedId());
+        $object = $this->find(DBConnection::newInsertId());
         $defaultVariables = get_class_vars(get_called_class());
         $allVariables = get_object_vars($object);
          $differentVariables = array_diff(array_keys($allVariables),array_keys($defaultVariables));
@@ -38,8 +33,8 @@ trait HasCRUD{
 
     }
 
-    public function update(){
-        $this->setSql("INSERT INTO {$this->table} SET ". $this->setFillables() . $this->updatedAt."=Now();");
+    public function update($array){
+        $this->setSql("UPDATE ".$this->table." SET ".$this->setFillabels($array).", ".$this->updatedAt."=Now()");
         $this->setWhere("AND " , $this->primaryKey." = ?");
         $this->setValue($this->primaryKey, $this->{$this->primaryKey});
         $this->executeQuery();

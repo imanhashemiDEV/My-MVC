@@ -2,6 +2,6 @@
 
 
 define('DBHOST', 'localhost');
-define('DBNAME', 'dsoon');
+define('DBNAME', 'laravel');
 define('DBUSERNAME', 'root');
 define('DBPASSWORD', '');

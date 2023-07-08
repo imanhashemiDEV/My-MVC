@@ -10,7 +10,10 @@ require_once "../routes/web.php";
 require_once "../routes/api.php";
 
 $user = new User();
-$user->where('id','=',17)->delete(17);
+$user->find(1)->update([
+    'name'=>'iman',
+    'email'=>"hashemi.iman@gmail.com",
+]);
 
 
 
